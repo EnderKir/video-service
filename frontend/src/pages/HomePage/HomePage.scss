@@ -1,0 +1,15 @@
+.home-page {
+  flex-grow: 1;
+
+  .text {
+    color: #573e8c;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+  }
+}
+

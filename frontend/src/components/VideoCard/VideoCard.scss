@@ -1,0 +1,25 @@
+.video-card {
+
+  .paper {
+    position: relative;
+
+    .card {
+      width: 100%;
+
+      .icon {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+      }
+
+      .media {
+        margin-top: 50px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+

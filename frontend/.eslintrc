@@ -1,0 +1,28 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "no-constant-condition": "error",
+    "no-dupe-args": "error",
+    "no-duplicate-imports": "error",
+    "no-duplicate-case": "error",
+    "no-empty": "error",
+    "no-extra-semi": "error",
+    "no-extra-boolean-cast": "error",
+    "no-ex-assign": "error",
+    "curly": "warn",
+    "array-callback-return": "error",
+
+    "no-await-in-loop": "error",
+    "no-unused-expressions": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  }
+}
