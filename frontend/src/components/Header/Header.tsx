@@ -6,9 +6,9 @@ const Header = () => {
   return (
     <AppBar position={'fixed'}>
       <Toolbar>
-        <Box width={'100%'} display='flex' flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'}>
+        <Box width={'100%'} display='flex' flexDirection={'row'} alignItems={'center'} justifyContent={'center'}>
           <Button color={'inherit'} size={'large'} component={NavLink} to='/'>
-            Simple Youtube
+            Video Service
           </Button>
         </Box>
       </Toolbar>

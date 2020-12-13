@@ -25,11 +25,16 @@ type PropsType = {
     localFile: any;
 };
 
+type VideoDataType = {
+  title: string,
+  description: string,
+};
+
 function UploadForm({localFile}: PropsType) {
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
 
-    const saveVideo = (values: any) => {
+    const saveVideo = (values: VideoDataType) => {
         const {title, description} = values;
 
         const formData = new FormData();
