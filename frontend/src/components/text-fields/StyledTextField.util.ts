@@ -1,7 +1,7 @@
 import withStyles from '@material-ui/core/styles/withStyles';
-import { TextField } from '@material-ui/core';
+import { TextField } from "formik-material-ui";
 
-const CustomTextField = withStyles({
+const StyledTextField = withStyles({
   root: {
     color: '#573e8c',
     '& .MuiFormLabel-root': {
@@ -16,4 +16,4 @@ const CustomTextField = withStyles({
   },
 })(TextField);
 
-export default CustomTextField;
+export default StyledTextField;

@@ -1,100 +1,105 @@
-import React, { memo, useCallback, useRef, useState } from 'react';
-import { Box, Button, Card, CardMedia, Grid } from '@material-ui/core';
+import React, { memo, useCallback, useState } from 'react';
+import { Button, Card, CardMedia, Grid } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 
-import CustomTextField from '../../config/utils/CustomTextField.util';
+import { Form, Formik, Field } from 'formik';
+import * as Yup from 'yup';
+
+import { MultilineTextField, OutlineTextField } from "../text-fields/text-fields";
 import { uploadData } from '../../config/services/api.services';
 
-type PropsType = {
-  localFile: any;
-};
+const SaveVideoSchema = Yup.object().shape({
+    title: Yup.string()
+        .min(2, 'Too Short!')
+        .max(50, 'Too Long!')
+        .required('Required'),
+    description: Yup.string()
+        .min(2, 'Too Short!')
+        .max(50, 'Too Long!')
+        .required('Required'),
+});
 
-const inputProps = {
-  style: {
-    color: '#573e8c'
-  }
+type PropsType = {
+    localFile: any;
 };
 
 function UploadForm({localFile}: PropsType) {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isTitleInvalid, setIsTitleInvalid] = useState(false);
-  const [isDescriptionInvalid, setIsDescriptionInvalid] = useState(false);
-  const refTitle = useRef<any>('');
-  const refDescription = useRef<any>('');
-  const history = useHistory();
+    const [isLoading, setIsLoading] = useState(false);
+    const history = useHistory();
 
-  const areFieldsValid = useCallback(() => {
-    if (!refTitle.current.value) {
-      setIsTitleInvalid(true);
-    }
+    const saveVideo = (values: any) => {
+        const {title, description} = values;
 
-    if (!refDescription.current.value) {
-      setIsDescriptionInvalid(true);
-    }
+        const formData = new FormData();
+        formData.append('file', localFile);
+        formData.append('videoTitle', title);
+        formData.append('videoDesc', description);
+        setIsLoading(true);
+        uploadData(formData)
+            .then(() => history.push('/'))
+            .catch(() => setIsLoading(false));
+    };
 
-    return refTitle.current.value && refDescription.current.value;
-  }, [refTitle, refDescription]);
+    const isDisabled = useCallback(() => {
+        return !localFile || isLoading;
+    }, [localFile, isLoading]);
 
-  const saveVideo = useCallback(() => {
-    if (!areFieldsValid()) {
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('file', localFile);
-    formData.append('videoTitle', refTitle.current.value);
-    formData.append('videoDesc', refDescription.current.value);
-    setIsLoading(true);
-    uploadData(formData)
-      .then(() => history.push('/'))
-      .catch(() => setIsLoading(false));
-  }, [areFieldsValid, localFile, refTitle, refDescription]);
-
-  const isDisabled = useCallback(() => {
-    return !localFile || isLoading;
-  }, [localFile, isLoading]);
-
-  return (
-    <Grid container spacing={3} alignContent={'center'} justify={'center'} direction={'column'}>
-      <Grid item lg={6} md={6} sm={12} xs={12}>
-        <Card>
-          <CardMedia component={'video'} src={URL.createObjectURL(localFile)} height={300} controls/>
-        </Card>
-      </Grid>
-      <Grid item lg={6} md={6} sm={12} xs={12}>
-        <Box display={'flex'} flexDirection={'column'} alignItems={'flex-start'}>
-          <CustomTextField
-            inputRef={refTitle}
-            label={'Title of your video'}
-            variant={'outlined'}
-            fullWidth
-            margin={'normal'}
-            InputProps={inputProps}
-            error={isTitleInvalid}
-            helperText={isTitleInvalid && 'Title is required'}
-          />
-          <CustomTextField
-            inputRef={refDescription}
-            rows={4}
-            multiline
-            label={'Description of your video'}
-            variant={'outlined'}
-            fullWidth
-            margin={'normal'}
-            InputProps={inputProps}
-            error={isDescriptionInvalid}
-            helperText={isDescriptionInvalid && 'Description is required'}
-          />
-          <Button onClick={saveVideo}
-                  variant={'contained'}
-                  color={'primary'}
-                  disabled={isDisabled()}>
-            Upload Video
-          </Button>
-        </Box>
-      </Grid>
-    </Grid>
-  )
+    return (
+        <Grid container spacing={10} alignContent={'center'} justify={'center'} direction={'column'}>
+            <Grid item lg={6} md={6} sm={12} xs={12}>
+                <Card>
+                    <CardMedia component={'video'} src={URL.createObjectURL(localFile)} height={300} controls/>
+                </Card>
+            </Grid>
+            <Grid item lg={6} md={6} sm={12} xs={12}>
+                <Formik
+                    initialValues={{
+                        title: '',
+                        description: '',
+                    }}
+                    onSubmit={saveVideo}
+                    validateOnChange
+                    validateOnBlur
+                    validationSchema={SaveVideoSchema}
+                >
+                    <Form>
+                        <Grid container direction="column" spacing={3}>
+                            <Grid item xs={12}>
+                                <Field
+                                    name="title"
+                                    type="text"
+                                    label="Title of your video"
+                                    placeholder="Title of your video"
+                                    required
+                                    component={OutlineTextField}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Field
+                                    name="description"
+                                    type="text"
+                                    label="Description of your video"
+                                    placeholder="Description of your video"
+                                    rows={4}
+                                    required
+                                    component={MultilineTextField}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Button
+                                    variant={'contained'}
+                                    color={'primary'}
+                                    type="submit"
+                                    disabled={isDisabled()}>
+                                    Upload Video
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Form>
+                </Formik>
+            </Grid>
+        </Grid>
+    )
 }
 
 export default memo(UploadForm);
