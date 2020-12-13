@@ -5,6 +5,8 @@ import { useHistory } from 'react-router-dom';
 import { Form, Formik, Field } from 'formik';
 import * as Yup from 'yup';
 
+import Spinner from "../Spinner/Spinner";
+
 import { MultilineTextField, OutlineTextField } from "../text-fields/text-fields";
 import { uploadData } from '../../config/services/api.services';
 
@@ -86,13 +88,16 @@ function UploadForm({localFile}: PropsType) {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Button
-                                    variant={'contained'}
-                                    color={'primary'}
-                                    type="submit"
-                                    disabled={isDisabled()}>
-                                    Upload Video
-                                </Button>
+                                {isLoading ?
+                                    <Spinner /> : (
+                                        <Button
+                                            variant={'contained'}
+                                            color={'primary'}
+                                            type="submit"
+                                            disabled={isDisabled()}>
+                                            Upload Video
+                                        </Button>
+                                    )}
                             </Grid>
                         </Grid>
                     </Form>
