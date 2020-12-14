@@ -1,15 +1,14 @@
-import express, { NextFunction } from 'express';
+import express, {NextFunction} from 'express';
 import http from 'http';
-import cors from 'cors';
 import config from 'config';
 import path from 'path';
 import fileUpload from 'express-fileupload';
-import { videoDelete, videoList, videoUpload } from './api/video';
-import { logger } from './logger';
-import { config as conf } from 'dotenv';
-import { Request, Response } from 'express-serve-static-core';
-import { ApiStatus } from './api/ApiStatus';
-import { DbService } from "./service/DbService";
+import {videoDelete, videoList, videoUpload} from './api/video';
+import {logger} from './logger';
+import {config as conf} from 'dotenv';
+import {Request, Response} from 'express-serve-static-core';
+import {ApiStatus} from './api/ApiStatus';
+import {DbService} from './service/DbService';
 
 conf();
 
@@ -17,7 +16,6 @@ const app = express();
 const server = http.createServer(app);
 
 app.use(express.json());
-// app.use(cors());
 app.use(fileUpload());
 
 app.use((req, res, next) => {

@@ -1,10 +1,10 @@
 import { Router, Response } from 'express';
-import { StorageService } from '../../service/StorageService';
+import { IStorageService } from '../../service/IStorageService';
 import { v4 as uuid } from 'uuid';
 import { ApiStatus } from '../ApiStatus';
 import {logger} from "../../logger";
 
-export function handler(router: Router, videoService: StorageService) {
+export function handler(router: Router, videoService: IStorageService) {
     router.post('/upload', async (req: any, res: Response) => {
         if (!req.files || !req.files.file) {
             return res.status(ApiStatus.VALIDATION_ERROR).send('no file provided')

@@ -1,5 +1,5 @@
-import { Video } from '../model/Video';
-import { StorageService } from "./StorageService";
+import { Video } from '../data/Video';
+import { IStorageService } from "./IStorageService";
 import { Sequelize } from "sequelize-typescript";
 import { logger } from '../logger';
 import { DbVideo } from "./models/DbVideo";
@@ -7,7 +7,7 @@ import fs from "fs/promises";
 import path from 'path';
 import config from "config";
 
-export class DbService implements StorageService {
+export class DbService implements IStorageService {
   public static readonly PATH = 'storage.filePath';
 
   private data: Video[];
