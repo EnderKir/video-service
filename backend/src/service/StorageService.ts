@@ -5,5 +5,5 @@ export interface StorageService {
 
   save(video: Video, file: any): Promise<Video>;
 
-  delete(videoId: string): Promise<Video>;
+  delete(videoId: number): Promise<Video>;
 }

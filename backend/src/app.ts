@@ -9,7 +9,7 @@ import { logger } from './logger';
 import { config as conf } from 'dotenv';
 import { Request, Response } from 'express-serve-static-core';
 import { ApiStatus } from './api/ApiStatus';
-import { FileStorageService } from './service/FileStorageService';
+import { DbService } from "./service/DbService";
 
 conf();
 
@@ -17,7 +17,7 @@ const app = express();
 const server = http.createServer(app);
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 app.use(fileUpload());
 
 app.use((req, res, next) => {
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
   next();
 });
 
-let videoService = new FileStorageService();
+let videoService = new DbService();
 
 const router = express.Router();
 

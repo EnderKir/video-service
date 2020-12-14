@@ -3,6 +3,7 @@
     "port": 3001
   },
   "storage": {
-    "filePath": "./video/data.json"
+    "filePath": "./video/data.json",
+    "dbPath": "./video/data.sqlite"
   }
 }

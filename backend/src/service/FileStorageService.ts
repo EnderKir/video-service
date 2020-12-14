@@ -26,7 +26,7 @@ export class FileStorageService implements StorageService {
             .then(() => this.saveUnsafe(video, file));
     }
 
-    public async delete(videoId: string): Promise<Video> {
+    public async delete(videoId: number): Promise<Video> {
         const data = await this.findAll();
         const video: Video | undefined = data.find((v) => v.id === videoId);
         if (data && video) {
@@ -58,7 +58,7 @@ export class FileStorageService implements StorageService {
         });
     }
 
-    private getPathToVideoFile(videoId: string, extension: string) {
+    private getPathToVideoFile(videoId: number, extension: string) {
         return path.join(path.dirname(config.get(FileStorageService.PATH)), videoId + extension);
     }
 
