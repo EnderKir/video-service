@@ -9,6 +9,7 @@ import {config as conf} from 'dotenv';
 import {Request, Response} from 'express-serve-static-core';
 import {ApiStatus} from './api/ApiStatus';
 import {DbService} from './service/DbService';
+import cors from 'cors';
 
 conf();
 
@@ -17,6 +18,23 @@ const server = http.createServer(app);
 
 app.use(express.json());
 app.use(fileUpload());
+
+const options: cors.CorsOptions = {
+  allowedHeaders: [
+    'Origin',
+    'X-Requested-With',
+    'Content-Type',
+    'Accept',
+    'X-Access-Token',
+  ],
+  credentials: true,
+  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+  origin: 'http://localhost:3000',
+  preflightContinue: false,
+};
+
+// @ts-ignore
+app.use(cors(options));
 
 app.use((req, res, next) => {
   logger.debug('HTTP:' + req.originalUrl);

@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b745c62f-4dc3-494f-b5dc-ce2aa098c505" name="Default Changelist" comment="change colors" />
+    <list default="true" id="b745c62f-4dc3-494f-b5dc-ce2aa098c505" name="Default Changelist" comment="change colors">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/video/data.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/backend/video/data.sqlite" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +73,8 @@
       <workItem from="1607851452991" duration="54000" />
       <workItem from="1607851509212" duration="17887000" />
       <workItem from="1607971173803" duration="2755000" />
-      <workItem from="1608103107207" duration="1408000" />
+      <workItem from="1608103107207" duration="2774000" />
+      <workItem from="1608131372978" duration="4212000" />
     </task>
     <task id="LOCAL-00001" summary="refactor UploadForm">
       <created>1607869175979</created>
@@ -147,9 +154,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607858465333" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607870571104">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2" timestamp="1608104452582">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608104452582" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607870571104" />
     <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1607869521680">
       <screen x="0" y="0" width="1920" height="1040" />
