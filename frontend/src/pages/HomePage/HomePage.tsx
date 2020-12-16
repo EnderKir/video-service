@@ -53,9 +53,9 @@ function HomePage() {
           </Grid>
           : (
             <>
-              <Typography variant={'h2'} className={'text'}>There are no videos yet</Typography>
-              <Typography variant={'body1'} className={'text'}>You can upload any video that you want by click the
-                button</Typography>
+              <Typography variant={'h2'} className={'text'}>There are no videos yet :(</Typography>
+              <Typography variant={'body1'} className={'text'}>
+                Upload your videos by simply clicking a button</Typography>
             </>
           )
       }
