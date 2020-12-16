@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoCard matches snapshot (active) 1`] = `
+<WithStyles(ForwardRef(Grid))
+  className="video-card"
+  item={true}
+  onClick={[Function]}
+  xs={12}
+>
+  <WithStyles(ForwardRef(Paper))
+    className="paper"
+  >
+    <WithStyles(ForwardRef(Card))
+      className="card"
+      style={
+        Object {
+          "cursor": "pointer",
+          "height": 500,
+        }
+      }
+    >
+      <Memo(CloseIcon)
+        className="icon"
+        onClick={[Function]}
+      />
+      <WithStyles(ForwardRef(CardMedia))
+        className="media"
+        component="video"
+        controls={true}
+        height={350}
+        src="http://localhost:3001/55fd6d0a-2d16-4a6e-9114-a576bd68d375.mp4"
+        title="My description"
+      />
+      <WithStyles(ForwardRef(CardContent))>
+        <WithStyles(ForwardRef(Typography))
+          component="h2"
+          gutterBottom={true}
+          variant="h5"
+        >
+          My description
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          color="textSecondary"
+          component="p"
+          variant="body2"
+        >
+          My description
+        </WithStyles(ForwardRef(Typography))>
+      </WithStyles(ForwardRef(CardContent))>
+    </WithStyles(ForwardRef(Card))>
+  </WithStyles(ForwardRef(Paper))>
+</WithStyles(ForwardRef(Grid))>
+`;
+
+exports[`VideoCard matches snapshot 1`] = `
+<WithStyles(ForwardRef(Grid))
+  className="video-card"
+  item={true}
+  onClick={[Function]}
+  xs={3}
+>
+  <WithStyles(ForwardRef(Paper))
+    className="paper"
+  >
+    <WithStyles(ForwardRef(Card))
+      className="card"
+      style={
+        Object {
+          "cursor": "pointer",
+          "height": 400,
+        }
+      }
+    >
+      <Memo(DeleteOutlineIcon)
+        className="icon"
+        onClick={[Function]}
+      />
+      <WithStyles(ForwardRef(CardMedia))
+        className="media"
+        component="video"
+        controls={false}
+        height={250}
+        src="http://localhost:3001/55fd6d0a-2d16-4a6e-9114-a576bd68d375.mp4"
+        title="My description"
+      />
+      <WithStyles(ForwardRef(CardContent))>
+        <WithStyles(ForwardRef(Typography))
+          component="h2"
+          gutterBottom={true}
+          variant="h5"
+        >
+          My description
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          color="textSecondary"
+          component="p"
+          variant="body2"
+        >
+          My description
+        </WithStyles(ForwardRef(Typography))>
+      </WithStyles(ForwardRef(CardContent))>
+    </WithStyles(ForwardRef(Card))>
+  </WithStyles(ForwardRef(Paper))>
+</WithStyles(ForwardRef(Grid))>
+`;

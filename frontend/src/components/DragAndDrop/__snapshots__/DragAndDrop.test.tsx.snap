@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DragAndDrop matches snapshot 1`] = `
+<WithStyles(ForwardRef(Grid))
+  alignContent="center"
+  className="drag-and-drop"
+  container={true}
+  direction="column"
+  justify="center"
+  onDragEnter={[Function]}
+  onDragLeave={[Function]}
+  onDragOver={[Function]}
+  onDrop={[Function]}
+>
+  <WithStyles(ForwardRef(Typography))
+    className="text"
+    variant="h3"
+  >
+    Drag&Drop videos here
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Typography))
+    className="text"
+    variant="h5"
+  >
+    or
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Button))
+    color="primary"
+    component="label"
+    variant="outlined"
+  >
+    Browse video
+    <input
+      accept=".mp4"
+      hidden={true}
+      name="file"
+      onChange={[Function]}
+      type="file"
+    />
+  </WithStyles(ForwardRef(Button))>
+</WithStyles(ForwardRef(Grid))>
+`;

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage matches snapshot 1`] = `
+<div
+  className="home-page"
+>
+  <React.Fragment>
+    <WithStyles(ForwardRef(Typography))
+      className="text"
+      variant="h2"
+    >
+      There are no videos yet
+    </WithStyles(ForwardRef(Typography))>
+    <WithStyles(ForwardRef(Typography))
+      className="text"
+      variant="body1"
+    >
+      You can upload any video that you want by click the button
+    </WithStyles(ForwardRef(Typography))>
+  </React.Fragment>
+  <WithStyles(ForwardRef(Button))
+    className="button"
+    color="primary"
+    component={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "propTypes": Object {
+          "activeClassName": [Function],
+          "activeStyle": [Function],
+          "aria-current": [Function],
+          "className": [Function],
+          "exact": [Function],
+          "innerRef": [Function],
+          "isActive": [Function],
+          "location": [Function],
+          "onClick": [Function],
+          "replace": [Function],
+          "sensitive": [Function],
+          "strict": [Function],
+          "style": [Function],
+          "target": [Function],
+          "to": [Function],
+        },
+        "render": [Function],
+      }
+    }
+    to="/upload"
+    variant="outlined"
+  >
+    Upload video
+  </WithStyles(ForwardRef(Button))>
+</div>
+`;

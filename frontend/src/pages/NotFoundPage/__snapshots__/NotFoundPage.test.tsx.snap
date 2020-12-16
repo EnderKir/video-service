@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage matches snapshot 1`] = `
+<Styled(MuiBox)
+  alignItems="start"
+  className="not-found-page"
+  display="flex"
+  flexDirection="column"
+  height="80vh"
+  justifyContent="center"
+>
+  <WithStyles(ForwardRef(Typography))
+    className="text"
+    variant="h1"
+  >
+    404
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Typography))
+    className="text"
+    variant="h2"
+  >
+    We looked everywhere
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Typography))
+    className="text"
+    variant="h2"
+  >
+    Seems like this page is missing
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Button))
+    color="primary"
+    component={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "propTypes": Object {
+          "activeClassName": [Function],
+          "activeStyle": [Function],
+          "aria-current": [Function],
+          "className": [Function],
+          "exact": [Function],
+          "innerRef": [Function],
+          "isActive": [Function],
+          "location": [Function],
+          "onClick": [Function],
+          "replace": [Function],
+          "sensitive": [Function],
+          "strict": [Function],
+          "style": [Function],
+          "target": [Function],
+          "to": [Function],
+        },
+        "render": [Function],
+      }
+    }
+    to="/"
+    variant="outlined"
+  >
+    Go home
+  </WithStyles(ForwardRef(Button))>
+</Styled(MuiBox)>
+`;
