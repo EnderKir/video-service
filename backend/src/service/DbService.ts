@@ -3,6 +3,7 @@ import { IStorageService } from './IStorageService';
 import { Sequelize } from 'sequelize-typescript';
 import { logger } from '../logger';
 import { DbVideo } from '../models/DbVideo';
+// @ts-ignore
 import { IUploadManger } from './IUploadManager';
 
 export class DbService implements IStorageService<Video> {

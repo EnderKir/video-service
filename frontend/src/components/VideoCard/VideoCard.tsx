@@ -36,7 +36,7 @@ function VideoCard({ id, title, description, url, setActive, isActive = false, d
 
   const deleteVideoFile = (event: any) => {
     event.stopPropagation();
-    deleteVideo(id).then(() => deleteFile());
+    deleteVideo(url).then(() => deleteFile());
   };
 
   return (

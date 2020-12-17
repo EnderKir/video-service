@@ -9,7 +9,7 @@ export const getData = () => {
   return axios.get(`${API_URL}/video`);
 };
 
-export const deleteVideo = (id: string) => {
-  return axios.delete(`${API_URL}/delete/${id}`);
+export const deleteVideo = (url: string) => {
+  return axios.delete(`${API_URL}/delete/${url}`);
 };
 

@@ -9,8 +9,10 @@ import { config as conf } from 'dotenv';
 import { Request, Response } from 'express-serve-static-core';
 import { ApiStatus } from './api/ApiStatus';
 import { DbService } from './service/DbService';
+// @ts-ignore
 import { sequelize } from './orm';
 import { CacheServiceProxy } from './service/CacheServiceProxy';
+// @ts-ignore
 import { UploadManger } from './service/FileUploadManager';
 import cors from 'cors';
 
