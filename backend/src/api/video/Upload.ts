@@ -2,7 +2,6 @@ import { Router, Response } from 'express';
 import { IStorageService } from '../../service/IStorageService';
 import { v4 as uuid } from 'uuid';
 import { ApiStatus } from '../ApiStatus';
-import {logger} from "../../logger";
 
 export function handler(router: Router, videoService: IStorageService) {
     router.post('/upload', async (req: any, res: Response) => {
