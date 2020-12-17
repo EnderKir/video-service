@@ -1,11 +1,11 @@
 import { Video } from '../data/Video';
-import { IStorageService } from "./IStorageService";
-import { Sequelize } from "sequelize-typescript";
+import { IStorageService } from './IStorageService';
+import { Sequelize } from 'sequelize-typescript';
 import { logger } from '../logger';
-import { DbVideo } from "./models/DbVideo";
-import fs from "fs/promises";
+import { DbVideo } from './models/DbVideo';
+import fs from 'fs/promises';
 import path from 'path';
-import config from "config";
+import config from 'config';
 
 export class DbService implements IStorageService {
   public static readonly PATH = 'storage.filePath';

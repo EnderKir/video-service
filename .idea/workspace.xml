@@ -19,8 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b745c62f-4dc3-494f-b5dc-ce2aa098c505" name="Default Changelist" comment="enable cors on server">
+    <list default="true" id="b745c62f-4dc3-494f-b5dc-ce2aa098c505" name="Default Changelist" comment="remove useless import">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/service/DbService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/service/DbService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/service/models/DbVideo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/service/models/DbVideo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/video/data.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/backend/video/data.sqlite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +73,7 @@
       <workItem from="1607851509212" duration="17887000" />
       <workItem from="1607971173803" duration="2755000" />
       <workItem from="1608103107207" duration="2774000" />
-      <workItem from="1608131372978" duration="6315000" />
+      <workItem from="1608131372978" duration="8382000" />
     </task>
     <task id="LOCAL-00001" summary="refactor UploadForm">
       <created>1607869175979</created>
@@ -107,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608137996342</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="remove useless import">
+      <created>1608196684232</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608196684232</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +141,8 @@
     <MESSAGE value="some fixes" />
     <MESSAGE value="change colors" />
     <MESSAGE value="enable cors on server" />
-    <option name="LAST_COMMIT_MESSAGE" value="enable cors on server" />
+    <MESSAGE value="remove useless import" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove useless import" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1607858570228">
@@ -158,14 +169,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607858465333" />
-    <state x="442" y="200" key="Vcs.Push.Dialog.v2" timestamp="1608138001013">
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2" timestamp="1608196691540">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608138001013" />
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608196691540" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607870571104" />
-    <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1607869521680">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="534" y="94" width="549" height="635" key="find.popup" timestamp="1608196741910">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="534" y="94" width="549" height="635" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1608196741910" />
     <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607869521680" />
     <state x="731" y="394" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1607858463455">
       <screen x="0" y="0" width="1920" height="1040" />
