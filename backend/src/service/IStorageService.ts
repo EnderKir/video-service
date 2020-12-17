@@ -1,9 +1,8 @@
-import { Video } from '../data/Video';
 
-export interface IStorageService {
-  findAll(): Promise<Video[]>;
+export interface IStorageService<T> {
+  findAll(): Promise<T[]>;
 
-  save(video: Video, file: any): Promise<Video>;
+  save(video: T, file: any): Promise<T>;
 
-  delete(videoId: number): Promise<Video>;
+  delete(videoUrl: string): Promise<void>;
 }

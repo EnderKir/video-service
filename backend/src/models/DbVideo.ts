@@ -1,5 +1,5 @@
-import {Column, Model, Table} from 'sequelize-typescript';
-import {Video} from '../../data/Video';
+import { Column, Model, Table } from 'sequelize-typescript';
+import { Video } from '../data/Video';
 
 @Table
 export class DbVideo extends Model<DbVideo> implements Video {

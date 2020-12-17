@@ -5,7 +5,9 @@
     ],
     "jsRules": {},
     "rules": {
-        "no-magic-numbers": [true, -1, 0, 1]
+        "no-magic-numbers": [true, -1, 0, 1],
+        "quotemark": [true, "single", "jsx-double"],
+        "whitespace": [true, "check-module"]
     },
     "rulesDirectory": []
 }

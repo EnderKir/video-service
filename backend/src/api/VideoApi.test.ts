@@ -1,14 +1,16 @@
-import { app } from '../src/app';
+import { app } from '../app';
 import request from 'supertest';
 import * as assert from 'assert';
-import {ApiStatus} from '../src/api/ApiStatus';
+import { ApiStatus } from './ApiStatus';
 
 describe('VideoRouter', () => {
-  it('GET /video', async () => {
-    const res = await request(app).get('/video');
+  describe('GET /video', () => {
+    it('should return empty list on application start', async () => {
+      const res = await request(app).get('/video');
 
-    expect(res.status).toBe(ApiStatus.OK);
-    expect(res.body.length).toBeGreaterThanOrEqual(0);
+      expect(res.status).toBe(ApiStatus.OK);
+      expect(res.body.length).toBeGreaterThanOrEqual(0);
+    });
   });
 
   describe('POST /upload', () => {
@@ -17,7 +19,7 @@ describe('VideoRouter', () => {
             .post('/upload')
             .field('videoTitle', 'movie title')
             .field('videoDesc', 'movie description')
-            .expect(400);
+            .expect(ApiStatus.VALIDATION_ERROR);
     });
 
     it('return video object in case of success', () => {
@@ -33,7 +35,6 @@ describe('VideoRouter', () => {
           expect(description).toBe('movie description');
         })
         .catch((err: any) => {
-          console.log(err);
           assert.fail(err.message);
         });
     });
@@ -43,7 +44,7 @@ describe('VideoRouter', () => {
     it('return 404 if no such video', async () => {
       return request(app)
           .delete('/delete/123')
-          .expect(404);
+          .expect(ApiStatus.NOT_FOUND_ERROR);
     });
   });
 });
